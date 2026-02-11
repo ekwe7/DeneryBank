@@ -1,0 +1,1024 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* ==================== NAVIGATION ==================== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #5b4b9a;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav a:hover {
+    color: #5b4b9a;
+}
+
+/* Dropdown Container */
+nav li {
+    position: relative;
+}
+
+.dropdown-container {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.arrow {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    min-width: 180px;
+    margin-top: 10px;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.dropdown-container:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-container:hover .arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.3s;
+    border-left: 3px solid transparent;
+}
+
+.dropdown-item:hover {
+    background-color: #f5f3ff;
+    color: #5b4b9a;
+    border-left-color: #5b4b9a;
+    padding-left: 24px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.sign-in, .sign-up {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.sign-in {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.sign-in:hover {
+    border-color: #5b4b9a;
+    color: #5b4b9a;
+}
+
+.sign-up {
+    background-color: #5b4b9a;
+    color: white;
+}
+
+.sign-up:hover {
+    background-color: #4a3a7a;
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 50px;
+    background: linear-gradient(135deg, #f5f3ff 0%, #fafbfc 100%);
+    min-height: 500px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 500px;
+}
+
+.hero-label {
+    color: #5b4b9a;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+h1 .highlight {
+    color: #5b4b9a;
+}
+
+.hero-description {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: #5b4b9a;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #4a3a7a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(91, 75, 154, 0.3);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #5b4b9a;
+    border: 2px solid #5b4b9a;
+}
+
+.btn-secondary:hover {
+    background-color: #5b4b9a;
+    color: white;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+}
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.image-placeholder {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 3/4;
+    background-color: #e0e7ff;
+    border-radius: 10px;
+    border: 3px solid #5b4b9a;
+}
+
+/* ==================== PARTNERS SECTION ==================== */
+.partners {
+    padding: 80px 50px;
+    background-color: white;
+    text-align: center;
+}
+
+.partners h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+.partners-description {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+
+.partners-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.partner-logo {
+    width: 120px;
+    height: 60px;
+    background-color: #e8e8e8;
+    border-radius: 5px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* ==================== BENEFITS SECTION ==================== */
+.benefits-section {
+    padding: 80px 50px;
+    background-color: #f5f3ff;
+}
+
+.benefits-header {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.benefits-title {
+    flex: 0 0 45%;
+}
+
+.benefits-title h2 {
+    font-size: 32px;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.benefits-description {
+    flex: 0 0 45%;
+    color: #999;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.benefits-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.benefit-card {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(91, 75, 154, 0.15);
+}
+
+.benefit-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background-color: #f0e6ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.benefit-card:nth-child(2) .benefit-icon {
+    background-color: #ffe6e0;
+}
+
+.benefit-card:nth-child(3) .benefit-icon {
+    background-color: #fff5e0;
+}
+
+.benefit-card h3 {
+    font-size: 18px;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.benefit-card p {
+    color: #999;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.learn-more {
+    color: #5b4b9a;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.learn-more:hover {
+    color: #4a3a7a;
+}
+
+/* ==================== EXCHANGE SECTION ==================== */
+.exchange-section {
+    padding: 80px 50px;
+    background-color: white;
+}
+
+.exchange-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.exchange-card {
+    background: linear-gradient(135deg, #f5f3ff 0%, #fafbfc 100%);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.exchange-label {
+    color: #999;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.exchange-title {
+    font-size: 24px;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.currency-selector {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.currency-box {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.currency-amount {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.currency-conversion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.conversion-rate {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.conversion-rate:last-child {
+    border-bottom: none;
+}
+
+.total-convert {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+}
+
+.currency-dropdown {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.dropdown {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.dropdown:hover {
+    border-color: #5b4b9a;
+}
+
+.connect-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #ff9970;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.connect-btn:hover {
+    background-color: #ff8555;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 153, 112, 0.3);
+}
+
+.contact-link {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #999;
+}
+
+.contact-link a {
+    color: #5b4b9a;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-link a:hover {
+    text-decoration: underline;
+}
+
+.exchange-content h2 {
+    font-size: 32px;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.exchange-content p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.exchange-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-download, .btn-calculate {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    background-color: white;
+    color: #1a1a1a;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-download:hover, .btn-calculate:hover {
+    border-color: #5b4b9a;
+    color: #5b4b9a;
+}
+
+.btn-learn-exchange {
+    width: 100%;
+    padding: 14px;
+    background-color: #5b4b9a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 20px;
+}
+
+.btn-learn-exchange:hover {
+    background-color: #4a3a7a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(91, 75, 154, 0.3);
+}
+
+/* ==================== FINANCIAL GUIDANCE SECTION ==================== */
+.financial-guidance-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.guidance-text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.guidance-section-label {
+    color: #ff9970;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.guidance-section-title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: #1a1a1a;
+}
+
+.guidance-section-title .highlight {
+    color: #5b4b9a;
+}
+
+.guidance-paragraph {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.guidance-quote-block {
+    color: #999;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.guidance-author-block {
+    margin: 30px 0;
+}
+
+.guidance-signature-image {
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-style: italic;
+    color: #333;
+}
+
+.guidance-author-name {
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.guidance-author-title {
+    color: #999;
+    font-size: 12px;
+}
+
+.guidance-learn-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: #5b4b9a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: fit-content;
+}
+
+.guidance-learn-btn:hover {
+    background-color: #4a3a7a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(91, 75, 154, 0.3);
+}
+
+/* ==================== INVOICE SECTION ==================== */
+.invoice-section-wrapper {
+    position: relative;
+}
+
+.invoice-display-card {
+    background-color: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.invoice-decoration-circle {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f0e6ff 100%);
+    border-radius: 50%;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.invoice-card-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 3;
+}
+
+.invoice-status-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #00d4aa;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.invoice-card-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.invoice-card-subtitle {
+    font-size: 13px;
+    color: #999;
+}
+
+.invoice-details-section {
+    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 30px 0;
+    margin-bottom: 30px;
+}
+
+.invoice-detail-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 25px;
+}
+
+.invoice-detail-row:last-child {
+    margin-bottom: 0;
+}
+
+.invoice-detail-label {
+    font-size: 12px;
+    color: #999;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.invoice-detail-value {
+    font-size: 14px;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.invoice-detail-amount {
+    font-size: 20px;
+    color: #5b4b9a;
+}
+
+.invoice-detail-secondary {
+    font-size: 13px;
+    color: #666;
+}
+
+.invoice-detail-status {
+    color: #00d4aa;
+    font-weight: 700;
+}
+
+.invoice-detail-method {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.invoice-payment-icon {
+    width: 24px;
+    height: 16px;
+    background-color: #1a1a1a;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.invoice-address-block {
+    margin-bottom: 20px;
+}
+
+.invoice-address-block:last-of-type {
+    margin-bottom: 0;
+}
+
+.invoice-address-name {
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.invoice-address-text {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.invoice-help-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 20px;
+    border-top: 1px solid #e8e8e8;
+    margin-top: 30px;
+    font-size: 13px;
+    color: #666;
+}
+
+.invoice-help-icon {
+    width: 18px;
+    height: 18px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #999;
+    flex-shrink: 0;
+}
+
+.invoice-help-text a {
+    color: #5b4b9a;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.invoice-help-text a:hover {
+    text-decoration: underline;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px 20px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .hero-image {
+        margin-left: 0;
+        margin-top: 40px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    .partners {
+        padding: 40px 20px;
+    }
+
+    .partners-grid {
+        gap: 20px;
+    }
+
+    .benefits-section {
+        padding: 50px 20px;
+    }
+
+    .benefits-header {
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+
+    .benefits-title, .benefits-description {
+        flex: 1 !important;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .exchange-section {
+        padding: 50px 20px;
+    }
+
+    .exchange-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .benefits-title h2, .exchange-content h2 {
+        font-size: 24px;
+    }
+
+    .exchange-buttons {
+        flex-direction: column;
+    }
+
+    .financial-guidance-wrapper {
+        grid-template-columns: 1fr;
+        padding: 50px 20px;
+        gap: 40px;
+    }
+
+    .guidance-section-title {
+        font-size: 28px;
+    }
+
+    .invoice-display-card {
+        padding: 30px;
+    }
+
+    .invoice-detail-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .invoice-decoration-circle {
+        top: -10px;
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    nav ul {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 30px 15px;
+        min-height: auto;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .financial-guidance-wrapper {
+        padding: 30px 15px;
+    }
+
+    .guidance-section-title {
+        font-size: 22px;
+    }
+
+    .invoice-display-card {
+        padding: 20px;
+    }
+
+    .invoice-details-section {
+        padding: 20px 0;
+    }
+
+    .invoice-detail-row {
+        gap: 10px;
+    }
+}
